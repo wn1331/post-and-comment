@@ -1,19 +1,22 @@
 package com.whatthefork.communicationandalarm.common.dto.request;
 
+import com.whatthefork.communicationandalarm.common.enums.Category;
 import lombok.AccessLevel;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class CreatePostRequestDto {
+public class CreatePostRequest {
 
     private Long memberId;
 
-    private Boolean isAnnouncement;
+    private Category category;
 
     private String title;
 
-    private String comment;
+    private String content;
+
+
+
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 public class PostRepositoryImpl implements PostRepository {
 
     private final PostJpaRepository postJpaRepository;
+    private final PostViewLogJpaRepository postViewLogJpaRepository;
 
     public Post save(Post post) {
         return postJpaRepository.save(post);

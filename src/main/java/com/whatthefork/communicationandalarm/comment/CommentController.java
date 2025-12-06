@@ -1,4 +1,4 @@
-package com.whatthefork.communicationandalarm.post.controller;
+package com.whatthefork.communicationandalarm.comment;
 
 import com.whatthefork.communicationandalarm.post.domain.comment.CommentService;
 import org.springframework.stereotype.Controller;

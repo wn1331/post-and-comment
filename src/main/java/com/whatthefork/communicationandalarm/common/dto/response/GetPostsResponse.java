@@ -1,4 +1,5 @@
 package com.whatthefork.communicationandalarm.common.dto.response;
 
-public class CommentResponseDto {
+public class GetPostsResponse {
+
 }

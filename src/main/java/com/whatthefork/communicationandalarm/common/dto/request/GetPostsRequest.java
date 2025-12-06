@@ -1,4 +1,7 @@
 package com.whatthefork.communicationandalarm.common.dto.request;
 
-public class CommentRequestDto {
+public class GetPostsRequest {
+
+
+
 }
