@@ -21,4 +21,13 @@ public class PostViewLog extends BaseEntity {
     private Long userId;
 
     private Long postId;
+
+    private PostViewLog(Long userId, Long postId) {
+        this.userId = userId;
+        this.postId = postId;
+    }
+
+    public static PostViewLog create(Long userId, Long postId) {
+        return new PostViewLog(userId, postId);
+    }
 }

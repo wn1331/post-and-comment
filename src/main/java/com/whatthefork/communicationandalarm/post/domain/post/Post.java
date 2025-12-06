@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
 public class Post extends BaseEntity {
 
     @Id
@@ -32,7 +31,38 @@ public class Post extends BaseEntity {
 
     private String content;
 
-    public Boolean isPinned = false;
+    private Boolean isPinned = false;
 
-    public Boolean isDeleted = false;
+    private Boolean isDeleted = false;
+
+    @Builder
+    private Post(Long memberId, Category category, String title, String content) {
+        this.memberId = memberId;
+        this.category = category;
+        this.title = title;
+        this.content = content;
+    }
+
+    public static Post create(Long memberId, Category category, String title, String content) {
+        return Post.builder()
+                .memberId(memberId)
+                .category(category)
+                .title(title)
+                .content(content)
+                .build();
+    }
+
+    public void update(String title, String content, Category category) {
+        this.title = title;
+        this.content = content;
+        this.category = category;
+    }
+
+    public void delete() {
+        this.isDeleted = true;
+    }
+
+    public boolean isOwner(Long memberId) {
+        return this.memberId.equals(memberId);
+    }
 }
